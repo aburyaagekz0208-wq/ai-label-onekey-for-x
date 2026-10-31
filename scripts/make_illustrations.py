@@ -175,7 +175,7 @@ def img_hero():
     # 左：いままで
     left = [rect(50, 150, 470, 440, r=22, extra='filter="url(#sh)"'),
             t(80, 200, "いままで", 26, SUB, 700),
-            t(80, 236, "毎回マウスで 3 回クリック", 20, SUB)]
+            t(80, 236, "毎回マウスで3回クリック", 20, SUB)]
     steps = ["旗マークを押す", "「AIで生成」をオン", "「完了」を押す"]
     for i, s in enumerate(steps):
         yy = 278 + i * 96
@@ -190,7 +190,7 @@ def img_hero():
     # 右：これから
     right = [rect(690, 150, 460, 440, r=22, stroke=ACCENT, sw=4, extra='filter="url(#sh)"'),
              t(720, 200, "これから", 26, ACCENT_DARK, 700),
-             t(720, 236, "キーを 1 回押すだけ", 20, SUB)]
+             t(720, 236, "キーを1回押すだけ", 20, SUB)]
     ks, _ = keys(724, 280, ["Ctrl", "Shift", "Y"], size=30)
     right.append(ks)
     right.append(f'<path d="M920,360 v40" stroke="{ACCENT}" stroke-width="6" stroke-linecap="round" marker-end="url(#ah)"/>')
@@ -199,7 +199,7 @@ def img_hero():
     right.append(t(860, 456, "AIで生成", 26, ACCENT_DARK, 700))
     right.append(toast(920, 506, "AIラベル ON ✓"))
     body = "".join(left) + mid + "".join(right)
-    return frame(None, "「AIで生成」ラベル付けが、キー 1 つに。", "X の投稿・返信で使える Chrome 拡張（無料・投稿や送信はしません）", body)
+    return frame(None, "「AIで生成」ラベルをキー1つで付ける", "Xの投稿・返信で使えるChrome拡張（無料・投稿や送信はしません）", body)
 
 
 def img_download():
@@ -216,8 +216,8 @@ def img_download():
     b += hl(80, 376, 520, 54) + cursor(470, 395)
     # 右：解凍
     r = [rect(700, 150, 450, 360, r=18, extra='filter="url(#sh)"'),
-         t(730, 196, "ダウンロードした zip を", 22, INK, 700),
-         t(730, 228, "右クリック →「すべて展開」", 22, INK, 700),
+         t(730, 196, "ダウンロードしたzipを", 22, INK, 700),
+         t(730, 228, "右クリック→「すべて展開」", 22, INK, 700),
          rect(740, 262, 64, 76, fill="#b6a3ff", r=8), t(772, 312, "zip", 20, "#fff", 700, "middle"),
          rect(830, 256, 280, 128, fill="#fff", r=10, stroke=LINE),
          t(850, 290, "開く", 19, SUB),
@@ -228,9 +228,9 @@ def img_download():
          f'<path d="M740,410 h30 l10,12 h46 v56 h-86 Z" fill="#ffd166"/>',
          t(842, 452, "ai-label-onekey-1.0.0", 20, INK, 700),
          t(842, 480, "このフォルダを次で使います", 17, SUB)]
-    body = b + "".join(r) + bubble(50, 530, 1100, ["「Source code」ではなく ai-label-onekey-○○.zip を選んでください。",
+    body = b + "".join(r) + bubble(50, 530, 1100, ["「Source code」ではなく ai-label-onekey-○○.zip を選びます",
                                                   "解凍したフォルダは消さずに置いておきます（消すと拡張も動かなくなります）"], 19)
-    return frame(1, "GitHub から zip をダウンロードして解凍", "Releases ページのいちばん新しい版を使います", body)
+    return frame(1, "GitHubからzipをダウンロードして解凍", "Releasesページのいちばん新しい版を使います", body)
 
 
 def ext_page_top(w):
@@ -247,9 +247,9 @@ def img_devmode():
     b = browser(50, 150, w, 330, "chrome://extensions", inner)
     # 中身は (50, 198) からずれて置かれる
     b += hl(50 + w - 312, 198 + 22, 292, 48) + cursor(50 + w - 34, 198 + 44)
-    body = b + bubble(50, 510, 760, ["Chrome のアドレス欄に chrome://extensions と入力して Enter。",
+    body = b + bubble(50, 510, 760, ["Chromeのアドレス欄に chrome://extensions と入力してEnter",
                                      "右上の「デベロッパーモード」をオンにします"], 20)
-    return frame(2, "拡張機能のページで「デベロッパーモード」をオン", "Chrome のプロフィールごとに 1 回だけ", body)
+    return frame(2, "拡張機能のページで「デベロッパーモード」をオン", "Chromeのプロフィールごとに1回だけ", body)
 
 
 def img_load():
@@ -277,11 +277,11 @@ def img_load():
            rect(930, 530, 166, 42, fill=X_BLUE, r=8), t(1013, 557, "フォルダーの選択", 17, "#fff", 700, "middle"),
            hl(930, 530, 166, 42, 8), cursor(1050, 546),
            arrow(485, 340, 600, 380, 30)]
-    return frame(3, "「読み込む」を押して、解凍したフォルダを選ぶ", "カードが出てオンになっていれば入りました", b + "".join(dlg))
+    return frame(3, "「読み込む」を押して解凍したフォルダを選ぶ", "カードが出てオンになっていれば入りました", b + "".join(dlg))
 
 
 def img_ready():
-    inner = (t(30, 60, "X のタブ", 24, INK, 700)
+    inner = (t(30, 60, "Xのタブ", 24, INK, 700)
              + rect(30, 90, 520, 160, fill="#f7f9f9", r=12, stroke=LINE)
              + t(56, 180, "（ホーム画面）", 20, "#a8a2bd"))
     b = browser(50, 150, 580, 320, "x.com/home", inner)
@@ -297,9 +297,9 @@ def img_ready():
     re.append(ks)
     re.append(t(790, 374, "キーを押す", 20, INK))
     body = b + "".join(re) + bubble(50, 500, 1100, [
-        "拡張を入れる前から開いていた X のタブは、再読み込みするまで動きません。",
-        "複数の Chrome プロフィールで X を使う人は、プロフィールごとに手順 2〜3 をやってください"], 19)
-    return frame(4, "開いている X のタブを再読み込み", "これで準備完了です", body)
+        "拡張を入れる前から開いていたXのタブは再読み込みするまで動きません",
+        "Chromeのプロフィールを分けている人はXを使うプロフィールで手順2〜3をやってください"], 19)
+    return frame(4, "開いているXのタブを再読み込み", "これで準備完了です", body)
 
 
 def img_use():
@@ -313,12 +313,12 @@ def img_use():
     body.append(bubble(760, 330, 390, [
         "旗マーク → AIで生成 → 完了",
         "を自動で進めます",
-        "すでに ON なら何もしません"], 19))
+        "すでにONなら何もしません"], 19))
     body.append(rect(70, 520, 1080, 80, fill="#fff", r=16, stroke=LINE))
     k2, _ = keys(96, 534, ["Ctrl", "Enter"], size=22)
     body.append(k2)
-    body.append(t(350, 568, "カーソルは文の最後に戻るので、そのまま送信できます（この拡張は送信しません）", 19, INK))
-    return frame(5, "書いて、キーを押すだけ", "投稿画面・返信画面・投稿ページの返信欄で使えます", "".join(body))
+    body.append(t(350, 568, "カーソルは文の最後に戻るのでそのまま送信できます（この拡張は送信しません）", 19, INK))
+    return frame(5, "書いてキーを押すだけ", "投稿画面・返信画面・投稿ページの返信欄で使えます", "".join(body))
 
 
 def img_settings():
@@ -343,8 +343,8 @@ def img_settings():
              t(820, 390, "使いたいキーの組み合わせを押してください", 18, SUB, 400, "middle")]
     ks, _ = keys(650, 414, ["Ctrl", "Alt", "L"], size=28)
     right.append(ks)
-    body = "".join(left) + "".join(right) + t(50, 600, "Ctrl か Alt と組み合わせます（F1〜F12 は単独でも OK）。Chrome が使うキーは選べず、よく使うキーは注意が出ます", 19, SUB)
-    return frame(6, "キーは好きなものに変えられる", "変えたキーは、開いている X のタブにもすぐ反映", body)
+    body = "".join(left) + "".join(right) + t(50, 600, "CtrlかAltと組み合わせます（F1〜F12は単独でもOK）。Chromeが先に使うキーは選べません", 19, SUB)
+    return frame(6, "キーは好きなものに変えられる", "変えたキーは開いているXのタブにもすぐ反映されます", body)
 
 
 def mouse(cx, cy):
@@ -361,17 +361,17 @@ def mouse(cx, cy):
 def img_mouse():
     body = [mouse(260, 360)]
     body.append(rect(450, 230, 700, 120, r=18, stroke=HL, sw=3, extra='filter="url(#sh)"'))
-    body.append(t(480, 272, "ボタン A ＝ ラベルを付ける", 22, INK, 700))
+    body.append(t(480, 272, "ボタンA：ラベルを付ける", 22, INK, 700))
     ks, _ = keys(480, 290, ["Ctrl", "Shift", "Y"], size=22)
     body.append(ks)
     body.append(rect(450, 380, 700, 120, r=18, stroke=ACCENT, sw=3, extra='filter="url(#sh)"'))
-    body.append(t(480, 422, "ボタン B ＝ 送信する（お好みで）", 22, INK, 700))
+    body.append(t(480, 422, "ボタンB：送信する（お好みで）", 22, INK, 700))
     k2, _ = keys(480, 440, ["Ctrl", "Enter"], size=22)
     body.append(k2)
     body.append(t(830, 478, "押した瞬間に送信", 17, HL, 700))
-    body.append(bubble(50, 540, 1100, ["マウスの設定ソフト（Logi Options+ など）の「キーストロークの割り当て」で、ボタンにキーを入れます。",
-                                      "Chrome だけで効くよう「アプリ別設定」にすると安心です"], 19))
-    return frame(7, "マウスのボタン 1 つで使う", "ラベル → 送信 を親指だけで", "".join(body))
+    body.append(bubble(50, 540, 1100, ["マウスの設定ソフト（Logi Options+ など）の「キーストロークの割り当て」でボタンにキーを入れます",
+                                      "Chromeだけで効くよう「アプリ別設定」にすると安心です"], 19))
+    return frame(7, "マウスのボタン1つで使う", "ラベル→送信を親指だけで", "".join(body))
 
 
 def flow_box(x, y, w, h, lines, fill="#fff", stroke=LINE, size=19, bold=False):
@@ -383,17 +383,17 @@ def flow_box(x, y, w, h, lines, fill="#fff", stroke=LINE, size=19, bold=False):
 
 
 def img_trouble():
-    b = [flow_box(420, 140, 360, 64, ["キーを押すと、画面の下に何か出る？"], fill="#efe9ff", stroke=ACCENT, bold=True),
+    b = [flow_box(420, 140, 360, 64, ["キーを押すと画面の下に何か出る？"], fill="#efe9ff", stroke=ACCENT, bold=True),
          arrow(520, 206, 270, 254, 0, ACCENT, 4), arrow(680, 206, 900, 254, 0, ACCENT, 4),
          t(150, 238, "赤い字が出る", 20, HL, 700), t(920, 238, "何も出ない", 20, SUB, 700),
-         flow_box(50, 262, 460, 210, ["X の画面の作りが変わった可能性", "", "・投稿欄が開いているか確かめる", "・GitHub の Issues で知らせてください",
+         flow_box(50, 262, 460, 210, ["Xの画面の作りが変わった可能性", "", "・投稿欄が開いているか確かめる", "・GitHubのIssuesで知らせてください",
                                       "・新しい版が出たら入れ直す"], size=18),
-         flow_box(620, 262, 530, 64, ["① X のタブを再読み込みした？"]),
-         flow_box(620, 342, 530, 64, ["② いま使っている Chrome プロフィールに入れた？"]),
+         flow_box(620, 262, 530, 64, ["① Xのタブを再読み込みした？"]),
+         flow_box(620, 342, 530, 64, ["② いま使っているChromeのプロフィールに入れた？"]),
          flow_box(620, 422, 530, 64, ["③ ツールバーの拡張アイコンを押すと動く？"]),
          arrow(760, 490, 700, 532, 0, ACCENT, 4), arrow(1010, 490, 1070, 532, 0, ACCENT, 4),
-         flow_box(560, 540, 280, 76, ["動く → キーが届いていない", "（マウス設定・他のソフト）"], size=16, fill="#fff8e1", stroke="#f2c94c"),
-         flow_box(870, 540, 280, 76, ["動かない → 拡張を更新して", "X を再読み込み"], size=16, fill="#fff8e1", stroke="#f2c94c")]
+         flow_box(560, 540, 280, 76, ["動く→キーが届いていない", "（マウス設定・他のソフト）"], size=16, fill="#fff8e1", stroke="#f2c94c"),
+         flow_box(870, 540, 280, 76, ["動かない→拡張を更新して", "Xを再読み込み"], size=16, fill="#fff8e1", stroke="#f2c94c")]
     return frame(None, "うまく動かないときは", None, "".join(b))
 
 
