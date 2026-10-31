@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "AIラベル ワンキー for X",
+  "short_name": "AIラベル ワンキー",
+  "version": "1.0.0",
+  "description": "X（旧Twitter）の投稿・返信に「AIで生成」ラベルをキー1つで付けます。キーは自由に変更でき、投稿・送信は一切しません。",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": ["storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "「AIで生成」ラベルを付ける",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png"
+    }
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://x.com/*", "https://twitter.com/*"],
+      "js": ["hotkey.js", "content.js"]
+    }
+  ]
+}
